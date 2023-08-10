@@ -21,3 +21,6 @@ function App() {
 }
 
 export default App
+
+
+export const darker_color = "bg-slate-900"

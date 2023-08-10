@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
 
   return (
     <div className='fixed w-full h-[80px] flex justify-between items-center px-10  text-gray-300 '>
-        <p className="text-2xl font-bold text-white italic">&lt;DS/&gt;</p>
+        <p className="text-xl text-white">shalinda.me</p>
         <ul className="hidden md:flex flex-row text-white gap-8">
             <li>
             <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
@@ -40,18 +40,18 @@ const Navbar: React.FC = () => {
     {/* Mobile Menu */}
     <ul className={mobileMenu ? "md:hidden flex w-screen h-screen bg-primary items-center justify-center text-white flex-col absolute top-0 left-0" : "hidden"}>
         <li className="py-6 text-4xl">
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
+            <Link to="home" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
                 Home
                 </Link>
         </li>
         <li className="py-6 text-4xl">
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
-                    Home
+            <Link to="about" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
+                    About
                     </Link>
         </li>
         <li className="py-6 text-4xl">
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
-                Home
+            <Link to="skills" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
+                Skills
                 </Link>
         </li>
     </ul>

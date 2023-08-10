@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer:React.FC = () => {
   return (
-    <div className='w-full bg-primary'>
+    <div className='w-full bg-primary bg-slate-900'>
         <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center items-center h-full text-denary gap-4'>
             <hr className='w-40 border-2 border-denary mt-5'/>
             <p>Find an issue with this page? 
@@ -11,6 +11,7 @@ const Footer:React.FC = () => {
             <p>Need help?
                 <a href="mailto:shalindadamidu@gmail.com" className='text-violet-400 ml-3'>shalindadamidu@gmail.com</a>
                 </p>
+            <p className='text-md'>Still a half baked site</p>
             <p className='text-xs pb-5'>Copyright © 2023 Damidu Shalinda</p>
 
         </div>

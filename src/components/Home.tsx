@@ -3,7 +3,7 @@ import { MdOutlineArrowRightAlt } from 'react-icons/md'
 import { Link } from 'react-scroll'
 
 const Home:React.FC = () => (
-    <div id="home" className='w-full h-screen bg-primary'>
+    <div id="home" className=' flex items-center justify-center w-full h-[110vh] bg-slate-950'>
         {/* Container */}
         <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
             <p className='text-octonary text-md'>Hi, my name is</p>
