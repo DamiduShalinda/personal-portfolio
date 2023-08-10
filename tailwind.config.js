@@ -18,6 +18,9 @@ export default {
         'nonary': '#9F9F9F',
         'denary': '#AFAFAF',
     },
+    fontFamily: {
+      roboto: ['Roboto', 'sans-serif'],
+    },
   },
   plugins: [],
 }
