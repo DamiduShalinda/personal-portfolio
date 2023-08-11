@@ -1,50 +1,32 @@
 import React from 'react'
-import { SiDjango, SiDocker, SiFirebase, SiFlutter, SiMysql, SiReact, SiSpringboot, SiTypescript} from 'react-icons/si'
-import { darker_color } from '../App'
+import { SiMinutemailer , SiGithub, SiLinkedin , } from 'react-icons/si'
 
 const Skills:React.FC = () => {
   return (
-    <div id="skills" className={`${darker_color} w-full h-screen`}>
+    <div id="skills" className={` w-full h-screen`}>
             {/* container */}
-            <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full text-denary'>
-            <div>
-              <p className='text-4xl font-bold inline border-b-4 border-quinary '>Skills</p>
-              <p className='py-4'>These are the technologies I've worked with</p>
+            <div className='max-w-[1000px] mx-auto md:ml-48 px-8 flex flex-col justify-center h-full text-slate-50'>
+            <div className='grid md:grid-cols-2 '>
+            <div className='flex flex-col items-start'>
+              <p className='text-7xl font-bold  border-quinary '>Contact Me</p>
+              <p className='py-4 font-light text-xl'>Send Me a message</p>
             </div>
-            <div className='grid sm:grid-cols-4 grid-cols-3 text-center text-slate-100 py-8 gap-5'>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiTypescript size={50}/>
-                    <p className='my-4'>Typescript</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiReact size={50}/>
-                    <p className='my-4'>React</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiFlutter size={50}/>
-                    <p className='my-4'>Flutter</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiFirebase size={50}/>
-                    <p className='my-4'>Firebase</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiSpringboot size={50}/>
-                    <p className='my-4'>Springboot</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiDjango size={50}/>
-                    <p className='my-4'>Django</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiMysql size={50}/>
-                    <p className='my-4'>MySQL</p>
-                </div>
-                <div className='flex flex-col items-center justify-center shadow-md shadow-black bg-black/30 rounded-md hover:scale-110 duration-500  pt-4'>
-                    <SiDocker size={50}/>
-                    <p className='my-4'>Docker</p>
-                </div>
+            <div className='flex flex-col gap-4'>
+                <a href='mailto:shalindadamidu@gmail.com' target="_blank" className='border border-slate-100 flex flex-row p-3 hover:bg-emerald-900  items-center justify-center gap-10 rounded-sm'>
+                    <SiMinutemailer size={30}/>
+                    <p className='text-2xl font-semibold'> Send Me a Email</p>
+               </a>
+                <a href='https://github.com/DamiduShalinda' target="_blank" className='border border-slate-100 flex flex-row p-3 hover:bg-emerald-900  items-center justify-center gap-10 rounded-sm'>
+                    <SiGithub size={30}/>
+                    <p className='text-2xl font-semibold'> Follow Up on github</p>
+               </a>
+                <a href='https://www.linkedin.com/in/damidushalinda/' target="_blank" className='border border-slate-100 flex flex-row p-3 hover:bg-emerald-900  items-center justify-center gap-10 rounded-sm'>
+                    <SiLinkedin size={30}/>
+                    <p className='text-2xl font-semibold'> Follow Up on linkedIn</p>
+               </a>
             </div>
+            </div>
+            
             </div>
     </div>
   )

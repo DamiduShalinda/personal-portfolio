@@ -2,10 +2,17 @@ import React from 'react'
 import { BiLogoGithub , BiWorld} from 'react-icons/bi'
 import { Link} from 'react-scroll'
 import { projectsdata } from '../data'
+import { motion } from 'framer-motion'
 
 const Projects:React.FC = () => {
   return (
-    <div id="projects" className='w-full  bg-slate-900'>
+    <motion.div
+        initial={{y:100, opacity:0}}
+        animate={{y:0, opacity:1}}
+        transition={{duration:0.5}}
+        exit={{y:-100, opacity:0}}
+        id="projects" 
+        className='w-full h-full'>
         <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full text-slate-200 snap-start'>
         <div>
               <p className='text-4xl font-bold inline border-b-4 border-quinary '>
@@ -42,7 +49,7 @@ const Projects:React.FC = () => {
         })}
         </div>
     </div> 
-    </div>
+    </motion.div>
   )
 }
 

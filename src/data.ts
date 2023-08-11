@@ -1,5 +1,8 @@
+import { JSX } from './../node_modules/type-fest/source/tsconfig-json.d';
 import loanmanagment from '../assets/loanmanagment.png'
 import placeholder from '../assets/placeholder.png'
+import React from 'react'
+import { SiDjango, SiDocker, SiFirebase, SiFlutter, SiJavascript, SiMysql, SiPython, SiReact, SiSpringboot, SiTypescript , SiNextdotjs} from 'react-icons/si'
 
 type projectdatatype = {
     id: number;
@@ -10,6 +13,14 @@ type projectdatatype = {
     weblink?: string;
     imagepath: string;
 }
+
+// type Skillsdatatype = {
+//     id: number;
+//     title: string;
+//     description: string;
+//     titleicon : React.Element;
+//     technologies: React.ReactNode[];
+// }
 
 export const projectsdata: projectdatatype[] = [
     {
@@ -41,3 +52,5 @@ export const projectsdata: projectdatatype[] = [
     }
     
 ]
+
+
