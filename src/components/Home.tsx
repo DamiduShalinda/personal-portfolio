@@ -3,7 +3,7 @@ import { MdOutlineArrowRightAlt } from 'react-icons/md'
 import { Link } from 'react-scroll'
 
 const Home:React.FC = () => (
-    <div id="home" className=' flex items-center justify-center w-full h-[110vh] bg-dark3'>
+    <div id="home" className=' flex items-center justify-center w-full h-screen bg-dark3'>
         {/* Container */}
         <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
             <p className='text-slate-400 text-md'>Hi, my name is,</p>
@@ -18,7 +18,7 @@ const Home:React.FC = () => (
                 designing) exceptional digital experiences. Currently, I’m focused on
                 building responsive full-stack web applications.
             </p>
-            <div>
+            <div className='z-10'>
                 <Link to='projects' smooth={true} duration={500}>
                 <button className='flex flex-row items-center text-slate-200 text-lg gap-3 border-2 border-slate-200 p-3 mt-2 hover:bg-slate-200 hover:text-slate-950 group'>
                     View Projects
