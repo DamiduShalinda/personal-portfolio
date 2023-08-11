@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     const handleMenuClick = () => {setMobileMenu(!mobileMenu); console.log("clicked")};
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-10  text-gray-300 '>
+    <div className='fixed w-full h-[80px] flex justify-between items-center px-10  text-gray-300 bg-slate-950'>
         <p className="text-xl text-white">shalinda.me</p>
         <ul className="hidden md:flex flex-row text-white gap-8">
             <li>
@@ -31,14 +31,17 @@ const Navbar: React.FC = () => {
         </ul>
 
     {/* Hamburger */}
-    <div className="md:hidden text-white z-10" >
+    <div className="md:hidden text-white z-10 flex flex-row gap-4 items-end" >
+        <a href="https://github.com/DamiduShalinda" target="_blank"><FaGithub/></a>
+        <a href="https://www.linkedin.com/in/damidushalinda/" target="_blank"><FaLinkedin/></a>
+        <a href="mailto:shalindadamidu@gmail.com" target="_blank"><FiMail/></a>
         <button onClick={handleMenuClick}>
             { !mobileMenu ? <FaBars /> : <FaTimes/> }
         </button>
         
     </div>
     {/* Mobile Menu */}
-    <ul className={mobileMenu ? "md:hidden flex w-screen h-screen bg-primary items-center justify-center text-white flex-col absolute top-0 left-0" : "hidden"}>
+    <ul className={mobileMenu ? "md:hidden flex w-screen h-screen bg-slate-950 items-center justify-center text-white flex-col absolute top-0 left-0" : "hidden"}>
         <li className="py-6 text-4xl">
             <Link to="home" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
                 Home
@@ -59,15 +62,15 @@ const Navbar: React.FC = () => {
     {/* Social Icons */}
         <ul className="hidden lg:flex flex-col fixed top-[35%] left-0 text-white">
             <li className=" bg-tertiary w-[140px] h-[60px] ml-[-85px] hover:ml-0 duration-300 flex  items-center justify-between">
-                <a href="https://www.linkedin.com/in/damidushalinda/" className="flex flex-row items-center justify-around w-full">Linkedin  <FaLinkedin size={30}/>
+                <a href="https://www.linkedin.com/in/damidushalinda/" className="flex flex-row items-center justify-around w-full" target="_blank">Linkedin  <FaLinkedin size={30}/>
                 </a>
             </li>
             <li className=" bg-tertiary w-[140px] h-[60px] ml-[-85px] hover:ml-0 duration-300 flex  items-center justify-between">
-                <a href="https://github.com/DamiduShalinda" className="flex flex-row items-center justify-around w-full">Github  <FaGithub size={30}/>
+                <a href="https://github.com/DamiduShalinda" className="flex flex-row items-center justify-around w-full" target="_blank">Github  <FaGithub size={30}/>
                 </a>
             </li>
             <li className=" bg-tertiary w-[140px] h-[60px] ml-[-85px] hover:ml-0 duration-300 flex  items-center justify-between">
-                <a href="mailto:shalindadamidu@gmail.com" className="flex flex-row items-center justify-around w-full">Mail  <FiMail size={30}/>
+                <a href="mailto:shalindadamidu@gmail.com" className="flex flex-row items-center justify-around w-full" target="_blank">Mail  <FiMail size={30}/>
                 </a>
             </li>     
                 

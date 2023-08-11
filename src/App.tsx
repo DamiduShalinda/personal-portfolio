@@ -1,16 +1,16 @@
 import About from "./components/About"
 import Footer from "./components/Footer"
 import Home from "./components/Home"
-import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import Skills from "./components/Skills"
+import UpdatedNavbar from "./components/UpdatedNavbar"
 
 
 function App() {
 
   return (
     <div>
-    <Navbar />
+    <UpdatedNavbar/>
     <Home/>
     <About/>
     <Skills/>

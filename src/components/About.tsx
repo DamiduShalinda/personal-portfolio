@@ -2,22 +2,21 @@ import React from 'react'
 
 const About:React.FC = () => {
   return (
-    <section id='about'>
-        <div id="about" className='w-full h-screen bg-slate-900'>
+        <div id="about" className='w-full h-screen bg-dark3'>
                 <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
                    <div className='grid grid-cols-2'>
                          <div className=' sm:text-right pb-8 pl-4'>
-                                <p className='text-4xl text-denary font-bold border-b-4 inline  border-quinary'>About</p>
+                                <p className='text-4xl text-slate-300 font-bold border-b-4 inline  border-slate-300'>About</p>
                         </div>
                     </div>
-                    <div className='grid sm:grid-cols-2 text-septenary gap-8 px-4'>
+                    <div className='grid sm:grid-cols-2 text-slate-400 gap-8 px-4'>
                         <div className='sm:text-right text-4xl font-bold'>
                             <p>
                                 I'm Damidu, nice to meet you. Please Take a look around and get to know me.
                             </p>
                         </div>
                         <div>
-                        <p className='text-lg text-denary'>
+                        <p className='text-lg text-light3'>
                             I am passionate about building excellent software that improves
                             the lives of those around me. I specialize in creating software
                             for clients ranging from individuals and small-businesses all the
@@ -28,7 +27,6 @@ const About:React.FC = () => {
         
         </div>
         </div>
-    </section>
   )
 }
 
