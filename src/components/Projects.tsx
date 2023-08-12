@@ -1,52 +1,64 @@
-import React from 'react'
-import { BiLogoGithub , BiWorld} from 'react-icons/bi'
-import { Link} from 'react-scroll'
-import { projectsdata } from '../data'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { BiLogoGithub, BiWorld } from 'react-icons/bi';
+import { projectsdata } from '../data';
 
-const Projects:React.FC = () => {
+
+const Projects: React.FC = () => {
   return (
-    <div id="projects" className='w-full md:h-screen bg-slate-900'>
-        <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full text-denary'>
-        <div>
-              <p className='text-4xl font-bold inline border-b-4 border-quinary '>
-              <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
-                Projects
-                </Link>
-              </p>
-              <p className='py-4'>These are the Projects I've created</p>
-            </div>
-        <div className="grid md:grid-cols-2 items-center gap-4 ">
-        {/* Grid item */}
-        { projectsdata.map((project , index) => {
-            return (
-                <div key={index} style={{ backgroundImage: `url(${project.imagepath})`}}
-                className="shadow-lg shadow-[#040c16] group container rounded-md 
-             flex justify-center text-center items-center mx-auto content-div">
-               <div className="opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
-                   <h1 className="text-xl font-bold text-white">{project.title}</h1>
-                   <div className="flex justify-center gap-3 py-4">
-
-                       <a href={project.weblink}>
-                           <button className="bg-white text-black px-4 py-2 rounded-md flex flex-row items-center gap-3">
-                               <BiWorld size={25}/>
-                               View Site
-                               </button>
-                       </a>
-                       <a href={project.githublink}>
-                           <button className="bg-white text-black px-4 py-2 rounded-md flex flex-row items-center gap-3">
-                               View Code
-                               <BiLogoGithub  size={25}/>
-                               </button>
-                       </a>
+    <div id="projects" className="w-full ">
+                      <motion.div
+                 className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
+                   <div className='grid grid-cols-2 gap-5'>
+                         <div className=' sm:text-right pl-4 mb-10'>
+                                <p className='text-7xl text-slate-200 font-bold mb-2'>Projects</p>
+                                <p className='text-base text-slate-200 font-extralight tracking-widest'>several projects I've created</p>
+                                <p className='text-base text-slate-200 font-extralight tracking-widest'>to see all</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            )
-        })}
-        </div>
-    </div> 
-    </div>
-  )
-}
+                  <div className='flex flex-col gap-10' >
+                    {projectsdata.map((project, index) => (
+                        <motion.div 
+                        initial={{ scale: 0.9 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                        whileInView={{ scale: 1}}
+                        exit={{ opacity: 0 }}
+                        className={`flex  ${index %2 == 0 ? 'flex-row' : 'flex-row-reverse'} gap-10  bg-slate-800 rounded-lg`} key={index}>
+                            <motion.img 
+                            initial={{ scale: 0.9  , x : -50 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                            whileInView={{ scale: 1 , x:0 }}
+                            src={project.imagepath} alt={project.title} className='w-1/2 rounded-lg shadow-lg' />
+                            <div className={`flex flex-col justify-center ${index % 2 == 0 ? 'items-start' : 'items-end'} p-8`}>
+                              <p className='text-2xl text-slate-200 font-bold'>{project.title}</p>
+                              <p className='text-base text-slate-200 font-extralight'>{project.description}</p>
+                              <div className={`flex gap-4 my-5`}>
+                                <a href={project.githublink} target='_blank' rel='noreferrer'>
+                                  <BiLogoGithub size={30} className='text-slate-200 hover:text-slate-100' />
+                                </a>
+                                <a href={project.weblink} target='_blank' rel='noreferrer'>
+                                  <BiWorld size={30} className='text-slate-200 hover:text-slate-100' />
+                                </a>
+                              </div>
+                              <div className='flex flex-row items-center justify-center gap-4'>
+                                  {project.technologies.map((tech, index) => (
+                                    <p className='text-slate-200 font-extralight text-base' key={index}>{tech}</p>
+                                  ))}
 
-export default Projects
+                            </div>
+                          </div>
+                          </motion.div>
+                      )
+                    )
+                    }
+                  </div>
+        
+        </motion.div>
+      
+    </div>
+  );
+};
+
+export default Projects;

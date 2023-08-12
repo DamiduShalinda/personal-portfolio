@@ -1,5 +1,4 @@
 import About from "./components/About"
-import Footer from "./components/Footer"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
@@ -8,14 +7,16 @@ import Skills from "./components/Skills"
 
 function App() {
 
+//style={{ backgroundImage: `url(${placeholder})` }}
   return (
-    <div>
+    <div className="bg-repeat bg-center bg-slate-950 cursor-default"  > 
     <Navbar />
-    <Home/>
-    <About/>
-    <Skills/>
-    <Projects/>
-    <Footer/>
+    <div className="bg-transparent">
+      <section><Home/></section>
+      <section><About/></section>
+      <section><Projects/></section>
+      <section><Skills/></section>
+    </div>
     </div>
   )
 }

@@ -11,12 +11,14 @@ type projectdatatype = {
     imagepath: string;
 }
 
+
+
 export const projectsdata: projectdatatype[] = [
     {
         id: 1,
-        title: "loan Manamgment System",
+        title: "Loan Manamgment System",
         description: "a mobile app and web app for loan managment system",
-        technologies: ["React", "Django", "Flutter" , "MySQL" ],
+        technologies: ["Typescript","React", "Django", "Flutter" , "MySQL" ],
         githublink: "https://github.com/DamiduShalinda/loanManagmentSystem",
         weblink: "",
         imagepath : loanmanagment 
@@ -41,3 +43,4 @@ export const projectsdata: projectdatatype[] = [
     }
     
 ]
+
