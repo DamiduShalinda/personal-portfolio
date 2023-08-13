@@ -1,7 +1,8 @@
 import loanmanagment from '../assets/loanmanagment.png'
 import placeholder from '../assets/placeholder.png'
+import { SiTypescript, SiReact, SiFlutter, SiFirebase, SiSpringboot, SiDjango, SiMysql, SiDocker } from 'react-icons/si'
 
-type projectdatatype = {
+export type projectdatatype = {
     id: number;
     title: string;
     description: string;
@@ -44,3 +45,18 @@ export const projectsdata: projectdatatype[] = [
     
 ]
 
+interface Skill {
+    icon: React.ReactElement;
+    title: string;
+  }
+
+export  const skillsData: Skill[] = [
+    { icon: <SiTypescript size={15} />, title: 'Typescript' },
+    { icon: <SiReact size={15} />, title: 'React' },
+    { icon: <SiFlutter size={15} />, title: 'Flutter' },
+    { icon: <SiFirebase size={15} />, title: 'Firebase' },
+    { icon: <SiSpringboot size={15} />, title: 'Springboot' },
+    { icon: <SiDjango size={15} />, title: 'Django' },
+    { icon: <SiMysql size={15} />, title: 'MySQL' },
+    { icon: <SiDocker size={15} />, title: 'Docker' },
+  ];

@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     const handleMenuClick = () => {setMobileMenu(!mobileMenu); console.log("clicked")};
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-10  text-gray-300 '>
+    <div className='fixed w-full h-[80px] flex justify-between items-center px-10  text-gray-300 z-50'>
         <p className="text-base text-white ml-4">shalinda.me</p>
         <ul className="hidden md:flex flex-row text-white gap-8">
             <motion.li
@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
                 whileTap={{ scale: 0.9 }}
                 className="hover:text-slate-400 cursor-default"
             >
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
+            <Link to="home" spy={true} smooth={true} offset={0} duration={500}>
                 Home
                 </Link>
             </motion.li>
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
                 whileTap={{ scale: 0.9 }}
                 className="hover:text-slate-400 cursor-default"
             >
-            <Link to="projects" spy={true} smooth={true} offset={-100} duration={500}>
+            <Link to="projects" spy={true} smooth={true} offset={0} duration={500}>
                 Projects
                 </Link>
             </motion.li>
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                 >
-                    <a href="https://www.linkedin.com/in/shalinda-fernando/" target="_blank" rel="noreferrer">
+                    <a href="https://www.linkedin.com/in/damidushalinda/" target="_blank" rel="noreferrer">
                         <FaLinkedin/>
                     </a>
                 </motion.li>

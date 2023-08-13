@@ -1,6 +1,6 @@
 import React from 'react'
-import { SiTypescript, SiReact, SiFlutter, SiFirebase, SiSpringboot, SiDjango, SiMysql, SiDocker } from 'react-icons/si'
 import { motion } from 'framer-motion'
+import { skillsData } from '../data'
 
 const About:React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const About:React.FC = () => {
                     </div>
                     <div className='grid sm:grid-cols-2 text-slate-400 gap-8 px-4 items-start'>
                         <div className='sm:text-right text-2xl font-semibold mt-8'>
-                        Here are a few latest technologies I've been working with recently:
+                        Here are a few latest technologies I've been working with recently
                         </div>
                         <div className='flex flex-wrap gap-3 text-slate-50'>
                         {skillsData.map((skill, index) => (
@@ -37,19 +37,3 @@ const About:React.FC = () => {
 }
 
 export default About
-
-interface Skill {
-    icon: React.ReactElement;
-    title: string;
-  }
-
-  const skillsData: Skill[] = [
-    { icon: <SiTypescript size={15} />, title: 'Typescript' },
-    { icon: <SiReact size={15} />, title: 'React' },
-    { icon: <SiFlutter size={15} />, title: 'Flutter' },
-    { icon: <SiFirebase size={15} />, title: 'Firebase' },
-    { icon: <SiSpringboot size={15} />, title: 'Springboot' },
-    { icon: <SiDjango size={15} />, title: 'Django' },
-    { icon: <SiMysql size={15} />, title: 'MySQL' },
-    { icon: <SiDocker size={15} />, title: 'Docker' },
-  ];
