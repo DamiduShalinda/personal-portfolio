@@ -10,7 +10,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton"
 function App() {
   return (
     <Router>
-      <div className="bg-repeat bg-center bg-slate-950 cursor-default">
+      <div className="bg-repeat bg-center bg-gradient-to-br from-slate-950 via-neutral-900 to-slate-950 cursor-default">
         
         <div className="bg-transparent">
           <Routes>
