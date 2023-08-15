@@ -3,6 +3,8 @@ import { FaBars, FaTimes , FaLinkedin, FaGithub } from "react-icons/fa";
 import { FiMail} from "react-icons/fi"
 import { Link} from 'react-scroll'
 import { motion , useScroll } from "framer-motion";
+import { RiAdminLine } from "react-icons/ri";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar: React.FC = () => {
 
@@ -14,7 +16,7 @@ const Navbar: React.FC = () => {
   return (
     <div className='fixed w-full h-[80px] flex justify-between items-center px-10  text-gray-300 z-50'>
         <p className="text-base text-white ml-4">shalinda.me</p>
-        <ul className="hidden md:flex flex-row text-white gap-8">
+        <ul className="hidden md:flex flex-row text-white gap-8 items-center">
             <motion.li
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -29,8 +31,8 @@ const Navbar: React.FC = () => {
                 whileTap={{ scale: 0.9 }}
                 className="hover:text-slate-400 cursor-default"
             >
-            <Link to="about" spy={true} smooth={true} offset={50} duration={500}>
-                About
+            <Link to="skills" spy={true} smooth={true} offset={50} duration={500}>
+                Skills
                 </Link>
             </motion.li>
             <motion.li
@@ -38,9 +40,27 @@ const Navbar: React.FC = () => {
                 whileTap={{ scale: 0.9 }}
                 className="hover:text-slate-400 cursor-default"
             >
-            <Link to="projects" spy={true} smooth={true} offset={0} duration={500}>
+            <Link to="projects" spy={true} smooth={true} offset={-50} duration={500}>
                 Projects
                 </Link>
+            </motion.li>
+            <motion.li
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="hover:text-slate-400 cursor-default"
+            >
+            <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
+                Contacts
+                </Link>
+            </motion.li>
+            <motion.li
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="hover:text-slate-400 cursor-default"
+            >
+                <RouterLink to="/admin">
+                <RiAdminLine/>
+                </RouterLink>
             </motion.li>
         </ul>
 
@@ -59,13 +79,18 @@ const Navbar: React.FC = () => {
                 </Link>
         </li>
         <li className="py-6 text-4xl">
-            <Link to="about" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
-                    About
+            <Link to="skills" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
+                    Skills
                     </Link>
         </li>
         <li className="py-6 text-4xl">
-            <Link to="skills" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
-                Skills
+            <Link to="projects" spy={true} smooth={true} offset={-50} duration={500} onClick={handleMenuClick}>
+                Projects
+                </Link>
+        </li>
+        <li className="py-6 text-4xl">
+            <Link to="contact" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
+                Contacts
                 </Link>
         </li>
     </ul>

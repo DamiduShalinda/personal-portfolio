@@ -19,23 +19,30 @@ const AllProjetcs: React.FC = () => {
   }
 
   return (
-    <div className='w-full text-white snap-y snap-mandatory h-screen max-h-full '>
+    <div className='w-full text-white snap-y snap-mandatory md:h-screen max-h-full '>
       <ScrollToTopButton/>
-      <div className='fixed pt-40 pl-40'>
-            <div className='items-start justify-center flex flex-row'>
+      <div className='md:fixed md:pt-40 md:pl-40 pt-10 pl-10'>
+            <div className='md:items-start items-center justify-center flex flex-row gap-2 md:gap-4 mb-5'>
               <motion.div
                 initial={{ opacity: 0, x: -100  , scale: 1}}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className='border-4 '
+                className='border-4'
               >
-                <Link to='/'>
-                  <BsArrowUpLeft size={100} />
-                </Link>
+                <div className='hidden md:flex'>
+                  <Link to='/'>
+                    <BsArrowUpLeft size={100} />
+                  </Link>
+                </div>
+                <div className='md:hidden flex'>
+                  <Link to='/'>
+                    <BsArrowUpLeft size={50} />
+                  </Link>
+                </div>
               </motion.div>
-              <p className='text-5xl pl-4'>All Projects</p>
+              <p className='md:text-5xl text-3xl pl-4'>All Projects</p>
             </div>
           </div>
       <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
@@ -43,7 +50,7 @@ const AllProjetcs: React.FC = () => {
           <div></div>
           <div className='col-span-2 flex flex-col items-center justify-start gap-4'>
             {projectsdata.map((project, index) => (
-                <div key={index} className='flex flex-row justify-between border w-[30rem] rounded-md border-slate-500 bg-slate-900 bg-opacity-50'>
+                <div key={index} className='flex flex-row justify-start border md:w-[30rem] w-[23rem] rounded-md border-slate-500 bg-slate-900 bg-opacity-50'>
                   <div className='flex flex-col p-5'>
                     <p className='text-2xl font-semibold mb-3'>{project.title}</p>
                     <p className='text-sm font-light mb-2'>{project.description}</p>
@@ -77,17 +84,6 @@ const AllProjetcs: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                    <div className='flex flex-col justify-evenly items-center p-5'>
-                          <motion.div
-                            variants={variants}
-                            initial="hidden"
-                            animate="visible"
-                            whileHover="hover"
-                            whileTap="tap"
-                          className=' p-2'>
-                            <BsArrowUpRight size={50}/>
-                          </motion.div>
-                    </div>
                 </div>
             ))
               }

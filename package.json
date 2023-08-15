@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebase/database": "^1.0.1",
+    "@firebase/firestore": "^4.1.0",
+    "firebase": "^10.1.0",
     "framer-motion": "^10.15.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "react": "^18.2.0",

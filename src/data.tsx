@@ -1,6 +1,7 @@
 import loanmanagment from '../assets/loanmanagment.png'
 import placeholder from '../assets/placeholder.png'
-import { SiTypescript, SiReact, SiFlutter, SiFirebase, SiSpringboot, SiDjango, SiMysql, SiDocker } from 'react-icons/si'
+import { SiTypescript, SiReact, SiFlutter, SiFirebase, SiSpringboot, SiDjango, SiMysql, SiDocker, SiJavascript , SiDart } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa'
 
 export type projectdatatype = {
     id: number;
@@ -46,17 +47,40 @@ export const projectsdata: projectdatatype[] = [
 ]
 
 interface Skill {
+    languages: label[];
+    frameworks: label[];
+  }
+
+  interface label {
     icon: React.ReactElement;
     title: string;
   }
 
-export  const skillsData: Skill[] = [
-    { icon: <SiTypescript size={15} />, title: 'Typescript' },
-    { icon: <SiReact size={15} />, title: 'React' },
-    { icon: <SiFlutter size={15} />, title: 'Flutter' },
-    { icon: <SiFirebase size={15} />, title: 'Firebase' },
-    { icon: <SiSpringboot size={15} />, title: 'Springboot' },
-    { icon: <SiDjango size={15} />, title: 'Django' },
-    { icon: <SiMysql size={15} />, title: 'MySQL' },
-    { icon: <SiDocker size={15} />, title: 'Docker' },
-  ];
+export  const skillsData: Skill = 
+    {
+        languages: [
+            { icon: <SiTypescript size={15} />, title: 'Typescript' },
+            { icon: <SiJavascript size={15} />, title: 'Javascript' },
+            { icon: <SiDart size={15} />, title: 'Dart' },
+            { icon: <FaJava size={15} />, title: 'Java' },
+        ] ,
+        frameworks: [
+            { icon: <SiReact size={15} />, title: 'React' },
+            { icon: <SiFlutter size={15} />, title: 'Flutter' },
+            { icon: <SiFirebase size={15} />, title: 'Firebase' },
+            { icon: <SiDjango size={15} />, title: 'Django' },
+            { icon: <SiSpringboot size={15} />, title: 'Springboot' },
+            { icon: <SiMysql size={15} />, title: 'MySQL' },
+            { icon: <SiDocker size={15} />, title: 'Docker' },
+        ]
+    }
+
+
+  export  interface Project {
+        id: string,
+        title: string,
+        description: string,
+        githublink: string,
+        weblink: string,
+        technologies: string[]
+      }

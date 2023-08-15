@@ -16,7 +16,7 @@ const Home:React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
                     whileInView={{ scale: 1.2 }}
-                    className='text-4xl sm:text-7xl text-slate-50 font-bold'>
+                    className='text-4xl sm:text-7xl text-slate-50 font-bold ml-5 md:ml-0'>
                     Damidu Shalinda
                 </motion.h1>
                 {/* <Name/> */}
@@ -33,7 +33,7 @@ const Home:React.FC = () => {
                     <motion.button 
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className='flex flex-row items-center text-gray-300 text-lg gap-3 border-2 border-denary p-3 mt-2 hover:bg-denary hover:text-secondary group'>
+                        className='flex flex-row items-center text-slate-100 text-lg gap-3 border-2 border-slate-100 p-3 mt-2 hover:bg-slate-100 hover:text-slate-900 group'>
                         View Projects
                         <span className='group-hover:rotate-90 duration-300'>
                             <MdOutlineArrowRightAlt size={30}/>
