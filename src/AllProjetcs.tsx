@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { db } from './firebase-config';
 import { getDocs , collection} from '@firebase/firestore';
-import { ClipLoader, DotLoader } from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 
 interface Project {
   id: string,
