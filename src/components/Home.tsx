@@ -11,12 +11,17 @@ const Home:React.FC = () => {
             {/* Container */}
             <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
                 <p className='text-slate-100 text-md'>Hi, my name is</p>
+                
+                <motion.h1 
+                    className='text-5xl sm:text-7xl text-slate-50 font-bold md:ml-0 md:hidden'>
+                    Damidu Shalinda
+                </motion.h1>
                 <motion.h1 
                     initial={{ scale: 1 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
                     whileInView={{ scale: 1.2 }}
-                    className='text-4xl sm:text-7xl text-slate-50 font-bold ml-5 md:ml-0'>
+                    className='text-4xl sm:text-7xl text-slate-50 font-bold ml-5 md:ml-0 hidden md:flex'>
                     Damidu Shalinda
                 </motion.h1>
                 {/* <Name/> */}

@@ -2,10 +2,19 @@ import React, { useEffect, useState } from 'react';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import { BsArrowUpLeft , BsArrowUpRight , BsGithub} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { Project} from './data';
 import { motion } from 'framer-motion';
 import { db } from './firebase-config';
 import { getDocs , collection} from '@firebase/firestore';
+import { ClipLoader, DotLoader } from 'react-spinners';
+
+interface Project {
+  id: string,
+  title: string,
+  description: string,
+  githublink: string,
+  weblink: string,
+  technologies: string[]
+}
 
 const AllProjetcs: React.FC = () => {
 
@@ -19,12 +28,20 @@ const AllProjetcs: React.FC = () => {
         if (doc_refs.empty) {
           console.log("No projects found")
         } else {
-          const projects : Project = doc_refs.docs.map(doc => ({...doc.data(), id: doc.id}))
+          const projects = doc_refs.docs.map(doc => (
+            {id: doc.id,
+            title: doc.data().title,
+            description: doc.data().description,
+            githublink: doc.data().githublink,
+            weblink: doc.data().weblink,
+            technologies: doc.data().technologies
+            } 
+            ))
           setProjects(projects)
         }
     }
     getProjects()
-  }, [])
+  }, [projectsRef])
 
   useEffect(() => {
     if (projects.length > 0) {
@@ -37,7 +54,9 @@ const AllProjetcs: React.FC = () => {
     <>
     {loading ? 
     <div className='w-full h-screen text-white'>
-      Loading...
+      <div className='flex flex-col items-center justify-center h-full'>
+      <ClipLoader  color="hsla(168, 0%, 100%, 1)" />
+      </div>
     </div> :
     <div className='w-full text-white snap-y snap-mandatory md:h-full max-h-full '>
     <ScrollToTopButton/>
@@ -68,7 +87,7 @@ const AllProjetcs: React.FC = () => {
     <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
       <div className='grid md:grid-cols-3'>
         <div></div>
-        <div className='col-span-2 flex flex-col items-center justify-start gap-4'>
+        <div className='col-span-2 flex flex-col items-center justify-start gap-4 my-10'>
           {projects.map((project, index) => (
               <div key={index} className='flex flex-row justify-start border md:w-[30rem] w-[23rem] rounded-md border-slate-500 bg-slate-900 bg-opacity-50'>
                 <div className='flex flex-col p-5'>

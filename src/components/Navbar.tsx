@@ -72,19 +72,19 @@ const Navbar: React.FC = () => {
         
     </div>
     {/* Mobile Menu */}
-    <ul className={mobileMenu ? "md:hidden flex w-screen h-screen bg-primary items-center justify-center text-white flex-col absolute top-0 left-0" : "hidden"}>
+    <ul className={mobileMenu ? "md:hidden flex w-screen h-screen bg-gradient-to-br from-slate-950 via-neutral-900 to-slate-950 items-center justify-center text-white flex-col absolute top-0 left-0" : "hidden"}>
         <li className="py-6 text-4xl">
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
+            <Link to="home" spy={true} smooth={true} offset={-50} duration={500} onClick={handleMenuClick}>
                 Home
                 </Link>
         </li>
         <li className="py-6 text-4xl">
-            <Link to="skills" spy={true} smooth={true} offset={50} duration={500} onClick={handleMenuClick}>
+            <Link to="skills" spy={true} smooth={true} offset={-60} duration={500} onClick={handleMenuClick}>
                     Skills
                     </Link>
         </li>
         <li className="py-6 text-4xl">
-            <Link to="projects" spy={true} smooth={true} offset={-50} duration={500} onClick={handleMenuClick}>
+            <Link to="projects" spy={true} smooth={true} offset={-70} duration={500} onClick={handleMenuClick}>
                 Projects
                 </Link>
         </li>
