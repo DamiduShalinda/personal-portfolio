@@ -1,8 +1,8 @@
 import React from 'react'
 import LoginFields from './components/LoginFields'
 import { motion } from 'framer-motion'
-import { AiOutlinePlusSquare } from 'react-icons/ai'
-import { addDoc } from '@firebase/firestore'
+import { addDoc , collection } from '@firebase/firestore'
+import { db } from './firebase-config'
 
 
 type userDetails = {
@@ -10,7 +10,13 @@ type userDetails = {
     password: string
 }
 
-
+type projectDetails = {
+    title: string,
+    description: string,
+    technologies: string[],
+    githublink: string,
+    weblink: string
+}
 
 const AdminPage:React.FC = () => {
 
@@ -20,6 +26,19 @@ const AdminPage:React.FC = () => {
     const [ technologiesstring , setTechnologiesstring ] = React.useState<string[]>([])
     const [ githublink , setGithublink ] = React.useState('')
     const [ weblink , setWebLink ] = React.useState('')
+
+    const projectCollection = collection( db , 'allprojects')
+
+    const addProjects = async (project : projectDetails) => {
+        await addDoc(projectCollection, project)
+        setTitle('')
+        setDescription('')
+        setTechnologiesstring([])
+        setGithublink('')
+        setWebLink('')
+        alert('Project added successfully')
+    }
+        
 
     const handleSubmit = (user: userDetails) => {
 
@@ -33,8 +52,15 @@ const AdminPage:React.FC = () => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        console.log('form submitted')
-        console.log(technologiesstring)
+        const project: projectDetails = {
+            title,
+            description,
+            technologies: technologiesstring,
+            githublink,
+            weblink
+        }
+
+        addProjects(project)
     }
 
 
@@ -44,7 +70,6 @@ const AdminPage:React.FC = () => {
     {!loggedIn ? <div className='w-full h-screen text-slate-100'><LoginFields onSubmit={handleSubmit}/></div> :
         <div className='w-full h-screen text-slate-100'>
             <h1 className='text-3xl text-center mb-4'>Admin Page</h1>
-            <AiOutlinePlusSquare/>
             <form onSubmit={handleFormSubmit}>
                 <div className='flex flex-col items-center justify-center gap-4 text-slate-900'>
                     <input 

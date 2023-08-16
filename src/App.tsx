@@ -6,30 +6,12 @@ import Projects from "./components/Projects"
 import Skills from "./components/Skills"
 import AllProjetcs from "./AllProjetcs"
 import ScrollToTopButton from "./components/ScrollToTopButton"
-import { doc , getDocs , collection} from "@firebase/firestore"
-import { db } from "./firebase-config"
-import { useEffect, useState } from "react"
-import { Project } from "./data"
 import AdminPage from "./AdminPage"
 
 
 function App() {
 
-  const [projects, setProjects] = useState<Project[]>([])
-  const projectsRef = collection(db, "allprojects")
 
-  useEffect(() => {
-    const getProjects = async () => {
-        const doc_refs = await getDocs(projectsRef)
-        if (doc_refs.empty) {
-          console.log("No projects found")
-        } else {
-          const projects : Project = doc_refs.docs.map(doc => ({...doc.data(), id: doc.id}))
-          setProjects(projects)
-        }
-    }
-    getProjects()
-  }, [])
  
 
   return (
