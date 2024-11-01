@@ -1,52 +1,75 @@
-import React from 'react'
-import { BiLogoGithub , BiWorld} from 'react-icons/bi'
-import { Link} from 'react-scroll'
-import { projectsdata } from '../data'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { BiLogoGithub, BiWorld } from 'react-icons/bi';
+import { BsArrowUpRight } from 'react-icons/bs'
+import { projectsdata } from '../data';
+import { Link } from 'react-router-dom';
 
-const Projects:React.FC = () => {
+
+const Projects: React.FC = () => {
   return (
-    <div id="projects" className='w-full md:h-screen bg-slate-900'>
-        <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full text-denary'>
-        <div>
-              <p className='text-4xl font-bold inline border-b-4 border-quinary '>
-              <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
-                Projects
-                </Link>
-              </p>
-              <p className='py-4'>These are the Projects I've created</p>
-            </div>
-        <div className="grid md:grid-cols-2 items-center gap-4 ">
-        {/* Grid item */}
-        { projectsdata.map((project , index) => {
-            return (
-                <div key={index} style={{ backgroundImage: `url(${project.imagepath})`}}
-                className="shadow-lg shadow-[#040c16] group container rounded-md 
-             flex justify-center text-center items-center mx-auto content-div">
-               <div className="opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
-                   <h1 className="text-xl font-bold text-white">{project.title}</h1>
-                   <div className="flex justify-center gap-3 py-4">
-
-                       <a href={project.weblink}>
-                           <button className="bg-white text-black px-4 py-2 rounded-md flex flex-row items-center gap-3">
-                               <BiWorld size={25}/>
-                               View Site
-                               </button>
-                       </a>
-                       <a href={project.githublink}>
-                           <button className="bg-white text-black px-4 py-2 rounded-md flex flex-row items-center gap-3">
-                               View Code
-                               <BiLogoGithub  size={25}/>
-                               </button>
-                       </a>
+    <div id="projects" className="w-full md:h-screen h-full">
+                <div
+                 className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center'>
+                   <div className='grid md:grid-cols-2 grid-cols-1 gap-5'>
+                         <div className=' sm:text-right pl-4 mb-5'>
+                                <p className='text-7xl text-slate-200 font-bold mb-2'>Projects</p>
+                                <p className='text-base text-slate-200 font-extralight tracking-widest'>several projects I've created</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            )
-        })}
+                  <div
+                  className='flex md:flex-row flex-col gap-10 text-slate-100 items-center justify-center' >
+                    {projectsdata.map((project, index) => (
+                        <motion.div key={index}
+                        initial = {{ scale : 0.95}}
+                        whileHover={{ scale : 1 }}
+                          className='group border border-slate-600 h-96 w-80 flex flex-col items-start justify-start py-10 px-4 rounded-lg hover:bg-slate-50 content-div'
+                          style={{
+                            backgroundImage: `url(${project.imagepath})`,
+                            backgroundClip: 'border-box',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'right center', 
+                            backgroundSize: 'cover',
+                          }}
+                          >
+                          <div className='hidden group-hover:flex flex-col'>
+                            <div className='text-xl font-semibold  text-left h-20'>{project.title}</div>
+                            <div className='font-thin mb-4 h-20'>{project.description}</div>
+                            <div className='h-24'>
+                              <div className='flex flex-wrap gap-2'>
+                                {project.technologies.map((technology , index) => (
+                                  <div key={index} className='bg-slate-700 px-2 py-1 rounded-full text-xs'>
+                                    {technology}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                            <div className='flex flex-row justify-evenly items-start mx-auto gap-20 mb-4'>
+                              <a href={project.githublink} target='_blank'><BiLogoGithub size={30}/></a>
+                              <a href={project.weblink} target='_blank'><BiWorld size={30}/></a>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )
+                    )
+                    }
+                  </div>
+                    <Link to='/allprojects'>
+                      <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className='mx-auto mt-10 w-40 flex flex-row items-center justify-center text-slate-100 text-lg gap-3 border-2 border-slate-100 p-2 hover:bg-slate-100 hover:text-slate-900 group'>
+                          See More
+                          <span className='group-hover:rotate-90 duration-300'>
+                              <BsArrowUpRight size={25}/>
+                          </span>
+                      </motion.button>
+                    </Link>
+        
         </div>
-    </div> 
+      
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
